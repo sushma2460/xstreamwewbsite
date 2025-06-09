@@ -14,7 +14,7 @@ import { insertContactSubmissionSchema } from "@shared/schema";
 import { apiRequest } from "@/lib/queryClient";
 import { fadeInUp, fadeInLeft, fadeInRight, staggerContainer } from "@/lib/animations";
 import type { InsertContactSubmission } from "@shared/schema";
-
+import emailjs from "@emailjs/browser";
 export default function Contact() {
   const { toast } = useToast();
 
@@ -51,9 +51,55 @@ export default function Contact() {
     },
   });
 
-  const onSubmit = (data: InsertContactSubmission) => {
-    contactMutation.mutate(data);
+  const onSubmit = async (data: InsertContactSubmission) => {
+  const now = new Date();
+  const formattedTime = now.toLocaleString();
+
+  const templateParams = {
+    firstName: data.firstName,
+    lastName: data.lastName,
+    email: data.email,
+    company: data.company || "N/A",
+    service: data.service || "N/A",
+    message: data.message,
+    time: formattedTime,
   };
+
+  try {
+    // Send email via EmailJS first
+    await emailjs.send(
+      "service_6dvuzhm",
+      "template_wppyt26",
+      templateParams,
+      "nC1s3dYV553ezqqAp"
+    );
+
+    // After email success, send to backend API via mutation
+    contactMutation.mutate(data, {
+      onSuccess: () => {
+        toast({
+          title: "Message Sent!",
+          description: "Thank you for your message. We'll get back to you soon.",
+        });
+        form.reset();
+      },
+      onError: () => {
+        toast({
+          title: "Error",
+          description: "Failed to send message. Please try again.",
+          variant: "destructive",
+        });
+      },
+    });
+  } catch (error) {
+    console.error("EmailJS Error:", error);
+    toast({
+      title: "Email Send Error",
+      description: "Unable to send email. Please try again.",
+      variant: "destructive",
+    });
+  }
+};
 
   const businessHours = [
     { day: "Monday - Friday", hours: "9:00 AM - 6:00 PM" },
