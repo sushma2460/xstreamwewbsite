@@ -4,10 +4,14 @@ import { Button } from "@/components/ui/button";
 import { Link } from "wouter";
 import { CheckCircle } from "lucide-react";
 import { fadeInUp, fadeInLeft, fadeInRight } from "@/lib/animations";
+import fivetran from "../components/fivetran.png" // Update the path to your full stack icon image
+import full from "../components/full.png"; // Update the path to your full stack icon image
+import kafka from "../components/kafka.png"; // Update the path to your kafka icon image
+
 
 const serviceData = {
   "apache-kafka": {
-    icon: "🚀",
+    icon: <img src={kafka} alt="Kafka Icon" className="w-20 h-20 mx-auto my-auto block" />,
     title: "Apache Kafka",
     tagline: "The backbone for building real-time streaming data pipelines and applications, Apache Kafka enables seamless data flow across systems. It’s designed for high-throughput, fault-tolerant messaging, making it ideal for modern, data-driven architectures.",
     overview: "Apache Kafka is the backbone for building real-time streaming data pipelines and applications. It provides a highly scalable, fault-tolerant, and low-latency platform for handling large volumes of data with high throughput. Kafka’s distributed architecture ensures reliable message delivery and seamless data integration across diverse systems, making it ideal for critical business processes such as event sourcing, log aggregation, real-time analytics, and stream processing. By enabling organizations to process and react to data instantly, Kafka helps unlock new opportunities for innovation, operational efficiency, and enhanced customer experiences in today’s data-driven world.",
@@ -58,7 +62,7 @@ const serviceData = {
     ],
   },
   "full-stack-development": {
-    icon: "💻",
+    icon: <img src={full} alt="Full Stack Icon" className="w-16 h-16 mx-auto my-auto block" />,
     title: "Full Stack Development",
     tagline: "End-to-end software solutions built with modern technologies across front-end and back-end. Our full stack expertise ensures seamless integration, responsive design, and scalable architecture tailored to meet your business needs from concept to deployment.",
     overview: "We specialize in developing scalable and maintainable web and mobile applications by leveraging modern front-end frameworks and robust back-end technologies. Our approach ensures responsive user experiences, efficient performance, and seamless integration with various APIs and services. Whether building customer-facing apps or enterprise solutions, we focus on clean architecture and best practices to deliver products that grow with your business needs.",
@@ -75,7 +79,7 @@ const serviceData = {
     ],
   },
   "fivetran": {
-    icon: "🔄",
+    icon: <img src={fivetran} alt="Fivetran Icon" className="w-16 h-16 mx-auto my-auto block" />,
     title: "Fivetran",
     tagline: "Automated data integration with seamless connectors, Fivetran enables reliable, low-maintenance data pipelines. It simplifies data movement across sources and destinations, ensuring analytics-ready data with minimal engineering effort.",
     overview: "Fivetran automates data integration by providing reliable, real-time replication of data from a wide range of sources into your data warehouse or data lake. Its fully managed connectors simplify complex ETL processes, ensuring data accuracy and consistency without the need for manual intervention. By streamlining data pipelines, Fivetran enables organizations to accelerate analytics and decision-making with up-to-date, trusted data.",

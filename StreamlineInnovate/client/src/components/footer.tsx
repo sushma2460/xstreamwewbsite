@@ -25,12 +25,18 @@ export default function Footer() {
             <div className="flex space-x-4">
               <a
                 href="https://www.linkedin.com/company/xstream-minds-pvt-ltd/posts/?feedView=all"
+                target="_blank"
+  rel="noopener noreferrer"
+
                 className="w-10 h-10 bg-primary rounded-lg flex items-center justify-center text-white hover:bg-white hover:text-primary transition-colors"
               >
                 <Linkedin size={20} />
               </a>
               <a
                 href="https://x.com/i/flow/login?redirect_after_login=%2FXstream_Minds"
+                target="_blank"
+  rel="noopener noreferrer"
+
                 className="w-10 h-10 bg-primary rounded-lg flex items-center justify-center text-white hover:bg-white hover:text-primary transition-colors"
               >
                 <Twitter size={20} />
@@ -97,7 +103,7 @@ export default function Footer() {
         </div>
 
         {/* Newsletter Signup */}
-        <div className="border-t border-gray-700 pt-8 mb-8">
+        {/* <div className="border-t border-gray-700 pt-8 mb-8">
           <div className="text-center">
             <h3 className="text-xl font-semibold mb-4">Stay Updated</h3>
             <p className="text-gray-300 mb-6">
@@ -114,7 +120,7 @@ export default function Footer() {
               </Button>
             </form>
           </div>
-        </div>
+        </div> */}
 
         <div className="border-t border-gray-700 pt-8 text-center text-gray-300">
   <p>

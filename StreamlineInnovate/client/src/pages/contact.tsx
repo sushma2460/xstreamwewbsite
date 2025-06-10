@@ -357,6 +357,9 @@ Ready to transform your business? Let’s talk about how we can support your gro
               <div className="flex space-x-4">
                 <a
                   href="https://www.linkedin.com/company/xstream-minds-pvt-ltd/posts/?feedView=all"
+                  target="_blank"
+  rel="noopener noreferrer"
+
                   className="w-12 h-12 bg-primary rounded-lg flex items-center justify-center text-white hover:bg-secondary transition-colors"
                 >
                   <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
@@ -365,6 +368,9 @@ Ready to transform your business? Let’s talk about how we can support your gro
                 </a>
                 <a
                   href="https://x.com/i/flow/login?redirect_after_login=%2FXstream_Minds"
+                  target="_blank"
+  rel="noopener noreferrer"
+
                   className="w-12 h-12 bg-primary rounded-lg flex items-center justify-center text-white hover:bg-secondary transition-colors"
                 >
                   <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
